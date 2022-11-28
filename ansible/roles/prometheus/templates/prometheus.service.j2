@@ -1,0 +1,32 @@
+[Unit]
+Description=Prometheus service
+Documentation="https://github.com/prometheus/prometheus"
+After=network.target 
+
+[Service]
+Type=simple
+ExecStart=/usr/local/prometheus/prometheus --config.file=/etc/prometheus.yml
+ExecReload=/usr/bin/kill -HUP $MAINPID
+User=prometheus
+Group=prometheus
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

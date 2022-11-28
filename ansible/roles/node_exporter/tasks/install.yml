@@ -1,0 +1,25 @@
+---
+ - name: "ensure dest location exists"
+   ansible.builtin.file:
+     path: "{{ node_exporter_dest_location }}"
+     state: "directory"
+     mode: "0744"
+ - name: "download node exporter"
+   ansible.builtin.unarchive:
+     src: "{{ node_exporter_url }}"
+     dest: "{{ node_exporter_dest_location }}"
+     remote_src: true
+     list_files: true 
+   register: "unarchive_output"
+ - name: "move binary from /data to /usr/local/bin"
+   ansible.builtin.copy:
+     src: "{{ node_exporter_dest_location }}/{{ unarchive_output.files[0] }}node_exporter"
+     dest: "/usr/local/bin/node_exporter"
+     mode: "0755"
+     remote_src: true
+
+
+
+
+
+

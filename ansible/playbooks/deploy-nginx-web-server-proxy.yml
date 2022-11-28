@@ -1,0 +1,32 @@
+---
+- hosts: "webserver"
+  become: True
+  gather_facts: true
+  collections:
+    - nginxinc.nginx_core
+  tasks:
+    - name: Install NGINX
+      ansible.builtin.include_role:
+        name: nginx
+    - name: Configure NGINX
+      ansible.builtin.include_role:
+        name: nginx_config
+    - name: "ensure nginx is started"
+      ansible.builtin.systemd:
+        name: "nginx"
+        state: "started"
+      tags:
+       - "systemd"
+
+
+
+
+
+
+
+    
+
+
+
+
+

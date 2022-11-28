@@ -1,0 +1,24 @@
+---
+- hosts: "local"
+  tasks:
+    - name: "Install docker-ce stable repository"
+      ansible.builtin.yum_repository:
+        name: "docker"
+        description: "Docker CE Stable Repo"
+        baseurl: "https://download.docker.com/linux/centos/$releasever/$basearch/stable"
+        enabled: true
+        gpgcheck: true
+        gpgkey: "https://download.docker.com/linux/centos/gpg"
+
+
+
+
+
+
+
+
+
+
+
+
+

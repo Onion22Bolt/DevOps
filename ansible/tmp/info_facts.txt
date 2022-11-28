@@ -1,0 +1,38 @@
+Hello! 	let's check linux version :D
+
+	1)AlmaLinux_release: 8.6 (Sky Tiger)
+
+	2)NAME: AlmaLinux
+
+	3)VERSION: 8.6 (Sky Tiger)
+
+	4)ID: almalinux
+
+	5)ID_LIKE: rhel centos fedora
+
+	6)VERSION_ID8: 8.6
+
+	7)PLATFORM_ID: platform:el8
+
+	8)PRETTY_NAME: AlmaLinux 8.6 (Sky Tiger)
+
+	9)ANSI_COLOR: 0;34
+
+	10)LOGO: fedora-logo-icon
+
+	11)CPE_NAME: cpe:/o:almalinux:almalinux:8::baseos
+	
+	12)HOME_URL: https://almalinux.org/
+
+	13)DOCUMENTATION_URL: https://wiki.almalinux.org/
+
+	14)BUG_REPORT_URL: https://bugs.almalinux.org/
+
+	15)ALMALINUX_MANTISBT_PROJECT: AlmaLinux-8
+
+	16)ALMALINUX_MANTISBT_PROJECT_VERSION: 8.6
+
+	17)REDHAT_SUPPORT_PRODUCT: AlmaLinux
+
+	18)REDHAT_SUPPORT_PRODUCT_VERSION: 8.6
+

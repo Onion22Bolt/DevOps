@@ -1,0 +1,15 @@
+---
+- hosts: "webserver"
+  tasks:
+   - name: "create new user, and add it to the prometheus group"
+     ansible.builtin.user:
+       name: prometheus
+       shell: /bin/bash
+       uid: 1357
+       groups: prometheus
+       append: yes
+
+
+
+
+

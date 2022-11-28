@@ -1,0 +1,10 @@
+---
+- hosts: "webserver"
+  become: True
+  tasks:
+   - name: "create new group"
+     ansible.builtin.group:
+       name: "prometheus"
+       state: "present"
+       gid: 2468
+

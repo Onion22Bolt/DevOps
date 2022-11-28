@@ -1,0 +1,24 @@
+---
+ - name: "ensure systemd unit"
+   ansible.builtin.template:
+     src: "prometheus.service.j2"
+     dest: "/etc/systemd/system/prometheus.service"
+     mode: "0644"
+     owner: "root"
+     group: "root"
+   notify: "restart prometheus"
+ - name: "ensure systemd service is started"
+   ansible.builtin.systemd:
+     name: "prometheus"
+     state: "started"
+
+
+
+
+
+
+
+
+
+
+

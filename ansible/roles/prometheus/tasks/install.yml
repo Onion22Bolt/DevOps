@@ -1,0 +1,37 @@
+---
+ - name: "ensure dest location exists"
+   ansible.builtin.file:
+     path: "{{ prometheus_dest_location }}"
+     state: "directory"
+     mode: "0755"
+ - name: "download prometheus"
+   ansible.builtin.unarchive:
+     src: "{{ prometheus_url }}"
+     dest: "{{ prometheus_dest_location }}"
+     remote_src: true
+     list_files: true 
+   register: "unarchive_output"
+ - name: "print output" 
+   ansible.builtin.debug:
+     msg: "{{ unarchive_output }}"
+ - name: "create /usr/local/prometheus directory"
+   ansible.builtin.file:
+     path: "{{ prometheus_file_location }}"
+     state: "directory"
+     mode: "0755"
+ - name: "move binary from /data to /usr/local/prometheus directory"
+   ansible.builtin.copy:
+     src: "{{ prometheus_dest_location }}/{{ unarchive_output.files[0] }}prometheus"
+     dest: "/usr/local/prometheus/prometheus"
+     mode: "0755"
+     remote_src: true
+ - name: "move prometheus.yml from /data to /etc/prometheus.yml"
+   ansible.builtin.copy:
+     src: "{{ prometheus_dest_location }}/{{ unarchive_output.files[0] }}prometheus.yml"
+     dest: "/etc/prometheus.yml"
+     mode: "0755"
+     remote_src: true
+
+
+
+

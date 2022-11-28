@@ -1,0 +1,8 @@
+---
+ - name: "Server Information Summary"
+   hosts: "webserver"
+   tasks:
+    - name: "Create info_facts.txt using Jinja2"
+      template:
+        src: info_facts.j2
+        dest: /ansible/info_facts.txt
