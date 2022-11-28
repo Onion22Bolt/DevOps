@@ -1,0 +1,9 @@
+1) https://github.com/igbedo/kubernetes-lab-tutorial/blob/master/content/basics.md?ysclid=laww17tznf820627706#core
+
+2) https://medium.com/@mngaonkar/kubernetes-get-started-deploy-a-simple-web-server-9636f4aa8706 
+
+3) https://nsirap.com/posts/038-kubernetes-helm-laravel-php-fpm-nginx-gitlab-the-devops-way/
+
+4) https://github.com/bhamdouni/minikube-wsl2?ysclid=laygciwj47589477327
+5) https://cloud.google.com/kubernetes-engine/docs/concepts/deployment
+6) https://k3s.io/
